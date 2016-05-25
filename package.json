@@ -8,12 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:restoration/couch-rest.git"
+    "url": "git+ssh://git@bitbucket.org/restoration/couch-rest.git"
   },
   "author": "Eric Uldall @ Restoration Media",
   "license": "ISC",
   "dependencies": {
     "request": "2.44.x",
     "extend": "1.3.x"
-  }
+  },
+  "homepage": "https://bitbucket.org/restoration/couch-rest#readme"
 }
