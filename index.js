@@ -87,7 +87,7 @@ var CouchREST = function(database){
 		this.data = is_doc(obj);
         	request({
                 	url: url,
-                	body: JSON.stringify(data),
+                	body: JSON.stringify(obj),
                 	method: 'PUT',
 			pool: pool
         	}, function(error, response, body){
