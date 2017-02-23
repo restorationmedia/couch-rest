@@ -2,7 +2,7 @@ var _db       = require('./config/database.js');
 var http      = require('http');
 var pool = new http.Agent();
     pool.maxSockets = 1000;
-var CouchREST = function(database){
+var CouchREST = function(db_config, database){
 	//dependencies
 	var request = require('request');
 	var extend  = require('extend');
@@ -26,8 +26,9 @@ var CouchREST = function(database){
 	var self = this;
 	
 	//self
-	this.protocol   = 'http';
-	this.host   	= _db.url+':'+_db.port;
+	this.config			= extend(_db, db_config);
+	this.protocol   = this.config.protocol || 'http';
+	this.host   		= this.config.host + ':' + this.config.port;
 	this.database 	= database;
 	this.endpoint   = this.protocol + "://"  + this.host + "/" + (this.database || "");
 
